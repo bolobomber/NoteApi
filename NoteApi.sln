@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.0.32126.317
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoteApi", "NoteApi\NoteApi.csproj", "{032BE482-48E0-43C7-8639-AB4D9481EEEB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Note.DAL", "NoteData\Note.DAL.csproj", "{30E4E048-140F-4853-8040-A5157143A81F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Note.Services", "Note.Services\Note.Services.csproj", "{96C2A228-9588-4B10-85AB-C35B1FB7C952}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{032BE482-48E0-43C7-8639-AB4D9481EEEB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{032BE482-48E0-43C7-8639-AB4D9481EEEB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{032BE482-48E0-43C7-8639-AB4D9481EEEB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{032BE482-48E0-43C7-8639-AB4D9481EEEB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{30E4E048-140F-4853-8040-A5157143A81F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30E4E048-140F-4853-8040-A5157143A81F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30E4E048-140F-4853-8040-A5157143A81F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30E4E048-140F-4853-8040-A5157143A81F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{96C2A228-9588-4B10-85AB-C35B1FB7C952}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{96C2A228-9588-4B10-85AB-C35B1FB7C952}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{96C2A228-9588-4B10-85AB-C35B1FB7C952}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{96C2A228-9588-4B10-85AB-C35B1FB7C952}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {3512319B-9DB4-4B94-BA40-6E90CAD51C45}
+	EndGlobalSection
+EndGlobal

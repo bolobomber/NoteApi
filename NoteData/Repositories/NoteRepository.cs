@@ -32,7 +32,8 @@ namespace Note.DAL.Repositories
 
         public async Task Update(Models.Note note)
         {
-            throw new NotImplementedException();
+            context.Notes.Update(note);
+            await context.SaveChangesAsync();
         }
 
         public async Task<Models.Note> GetById(int noteId)

@@ -39,13 +39,15 @@ namespace Note.Services.Services
             return await userRepository.GetById(id);
         }
 
-        public async Task UpdateUser(string name, string email, string password)
+        public async Task UpdateUser(int id, string name, string email, string password)
         {
             var  a = await userRepository.GetAllUsers();
-            var user = a.FirstOrDefault(x => x.Email == email);
-            user.Email = email;
+            var user = a.FirstOrDefault(x => x.Id == id);
+
             user.Name = name;
+            user.Email = email;
             user.Password = password;
+            await userValidator.ValidateAndThrowAsync(user);
             await userRepository.Update(user);
         }
 

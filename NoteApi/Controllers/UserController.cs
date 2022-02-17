@@ -44,9 +44,9 @@ namespace NoteApi.Controllers
         }
 
         [HttpPut]
-        public async Task<IActionResult> UpdateUser(string name, string email, string password)
+        public async Task<IActionResult> UpdateUser(int id, string name, string email, string password)
         {
-            await userService.UpdateUser(name,email,password);
+            await userService.UpdateUser(id,name,email,password);
             return StatusCode(StatusCodes.Status201Created);
         }
     }

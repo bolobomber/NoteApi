@@ -37,10 +37,18 @@ namespace Note.Services.Services
             await noteRepository.Delete(noteId);
         }
 
-        public async Task Update()
+        public async Task Update(int noteId, string title, string content)
         {
-            throw new NotImplementedException();
+            var allNotes = await noteRepository.GetAllNotes();
+            var note = allNotes.FirstOrDefault(x => x.Id == noteId);
+
+            note.Title = title;
+            note.Content = content;
+
+            await noteValidator.ValidateAndThrowAsync(note);
+            await noteRepository.Update(note);
         }
+
 
         public async Task<DAL.Models.Note> GetById(int noteId)
         {

@@ -47,7 +47,12 @@ namespace NoteApi.Controllers
         {
             return await noteService.GetAllNotesByUserId(id);
         }
-
+        [HttpPut]
+        public async Task<IActionResult> UpdateNote(int noteId, string title, string content)
+        {
+            await noteService.Update(noteId, title,content);
+            return StatusCode(StatusCodes.Status201Created);
+        }
 
     }
 }

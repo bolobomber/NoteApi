@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using Note.DAL.Interface.Repositories;
 using Note.DAL.Models;
 
@@ -23,24 +24,26 @@ namespace Note.DAL.Repositories
             await context.SaveChangesAsync();
         }
 
-        public Task Delete(int Id)
+        public async Task Delete(int id)
         {
-            throw new NotImplementedException();
+            context.Remove(await context.Users.FirstOrDefaultAsync(x => x.Id == id));
+            await context.SaveChangesAsync();
         }
 
-        public Task Update(User user)
+        public async Task Update(User user)
         {
-            throw new NotImplementedException();
+            context.Update(user);
+            await context.SaveChangesAsync();
         }
 
-        public Task<User> GetById(int Id)
+        public async Task<User> GetById(int id)
         {
-            throw new NotImplementedException();
+            return await context.Users.FirstOrDefaultAsync(x => x.Id == id);
         }
 
-        public Task<List<User>> GetAllUsers()
+        public async Task<List<User>> GetAllUsers()
         {
-            throw new NotImplementedException();
+            return await context.Users.ToListAsync();
         }
     }
 }

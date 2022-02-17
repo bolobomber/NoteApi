@@ -15,7 +15,7 @@ namespace Note.Services.Services
         public UserService(IUserRepository userRepository, UserValidator userValidator)
         {
             this.userRepository = userRepository;
-            this.userValidator=userValidator;
+            this.userValidator = userValidator;
         }
         public async Task AddUser(string name, string email, string password)
         {
@@ -27,6 +27,31 @@ namespace Note.Services.Services
             };
             await userValidator.ValidateAndThrowAsync(user);
             await userRepository.Add(user);
+        }
+
+        public async Task DeleteUser(int id)
+        { 
+            await userRepository.Delete(id);
+        }
+
+        public async Task<User> GetUserById(int id)
+        {
+            return await userRepository.GetById(id);
+        }
+
+        public async Task UpdateUser(string name, string email, string password)
+        {
+            var  a = await userRepository.GetAllUsers();
+            var user = a.FirstOrDefault(x => x.Email == email);
+            user.Email = email;
+            user.Name = name;
+            user.Password = password;
+            await userRepository.Update(user);
+        }
+
+        public async Task<List<User>> GetAllUsers()
+        {
+            return await userRepository.GetAllUsers();
         }
     }
 }
